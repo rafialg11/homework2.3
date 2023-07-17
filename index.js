@@ -9,7 +9,7 @@ app.use(express.urlencoded({
     extended: true
 }))
 
-const db = require('./models/')
+const db = require('./models')
 db.mongoose
     .connect(db.url, {
         useNewUrlParser: true,
@@ -21,6 +21,8 @@ db.mongoose
         console.log(`Cannot connect to DB`, err)
         process.exit()
     });
+
+require('./routes/songRoutes')(app)
 
 app.listen(PORT, () => { 
     console.log(`API is listening on port ${PORT}`); 

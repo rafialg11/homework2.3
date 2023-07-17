@@ -2,7 +2,7 @@ module.exports = (mongoose) => {
     const schema = mongoose.Schema(
         {
             title: String,
-            artists: Array,
+            artists: String,
             url: String 
         }
     )

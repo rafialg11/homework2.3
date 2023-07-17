@@ -3,7 +3,8 @@ module.exports = (mongoose) => {
         {
             title: String,
             artists: String,
-            url: String 
+            url: String,
+            playCount: { type: Number, default: 0 } 
         }
     )
     schema.method("toJSON", function(){
@@ -15,3 +16,4 @@ module.exports = (mongoose) => {
     const Song = mongoose.model("songs", schema)
     return Song
 }
+

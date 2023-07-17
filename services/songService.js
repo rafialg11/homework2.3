@@ -16,7 +16,6 @@ exports.createSong = (title, artists, url) => {
 };
 
 exports.playSong = (id) => {
-    
     return Song.findById(id)
     .then((song) => {
         if (!song) {

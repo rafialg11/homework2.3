@@ -2,7 +2,7 @@ const db = require('../models');
 const Song = db.songs;
 
 exports.findAll = () => {
-    return Song.find();
+    return Song.find().sort({ playCount: -1 });
 };
 
 exports.createSong = (title, artists, url) => {
